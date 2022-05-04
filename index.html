@@ -16,7 +16,7 @@
   window.dispatchEvent(new Event("beforeunload"));
   let iframe = document.createElement("iframe");
   document.body.appendChild(iframe);
-  let token = iframe.contentWindow.localStorage.token.replace(/^"|"$/g, "");
+  let token = JSON.parse(iframe.contentWindow.localStorage.token);
   window.open("https://cyan-2048.github.io/discordo/?token=" + encodeURIComponent(token), "_blank");
 })();
 </pre
