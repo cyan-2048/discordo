@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Discordo</title>
+		<script src="qrcode.min.js"></script>
+		<script src="app.js" defer></script>
+	</head>
+	<body>
+		<h2>Welcome to Discordo!</h2>
+		<p>this will make getting your discord token easier!</p>
+		<pre>
+(() => {
+  window.dispatchEvent(new Event("beforeunload"));
+  let iframe = document.createElement("iframe");
+  document.body.appendChild(iframe);
+  let token = iframe.contentWindow.localStorage.token.replace(/^"|"$/g, "");
+  window.open("https://cyan-2048.github.io/discordo/?token=" + encodeURIComponent(token), "_blank");
+})();
+</pre
+		>
+		<p>open discord in your browser, login, open devtools/console, paste this code and hit enter!</p>
+		<div id="qrcode"></div>
+	</body>
+	<style>
+		body > *:not(pre) {
+			user-select: none;
+		}
+		body {
+			padding: 20px;
+		}
+	</style>
+</html>
