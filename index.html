@@ -17,7 +17,7 @@
   let iframe = document.createElement("iframe");
   document.body.appendChild(iframe);
   let token = JSON.parse(iframe.contentWindow.localStorage.token);
-  window.open("https://cyan-2048.github.io/discordo/?token=" + encodeURIComponent(token), "_blank");
+  window.open("https://cyan-2048.github.io/discordo/#token=" + encodeURIComponent(token), "_blank");
   iframe.remove();
 })();
 </pre
