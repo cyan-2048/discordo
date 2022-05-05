@@ -1,5 +1,5 @@
-let a = new URL(location.href);
-let token = a.searchParams.get("token");
+let params = new URLSearchParams(location.hash.substr(1));
+let token = params.get("token");
 if (token) {
 	new QRCode(document.getElementById("qrcode"), {
 		text: token,
