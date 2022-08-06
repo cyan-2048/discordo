@@ -11,23 +11,37 @@
 	<body>
 		<h2>Welcome to Discordo!</h2>
 		<p>this will make getting your discord token easier!</p>
+		<small>(code taken from powercord/replugged js snippets)</small>
 		<pre>
-(() => {
-  window.dispatchEvent(new Event("beforeunload"));
-  let iframe = document.createElement("iframe");
-  document.body.appendChild(iframe);
-  let token = JSON.parse(iframe.contentWindow.localStorage.token);
-  window.open("https://cyan-2048.github.io/discordo/#token=" + encodeURIComponent(token), "_blank");
-  iframe.remove();
+(async () => {
+  const token = await new Promise(res => webpackChunkdiscord_app.push([
+    [Math.random()], {}, (r) => {
+      res(Object.values(r.c).find(m => m.exports && m.exports.default && m.exports.default.getToken !== void 0).exports.default.getToken())
+    }
+  ]));
+  confirm("This will now redirect you to the discordo website, please click on the website at least once...") && window.addEventListener("click", () =>
+    window.open("https://cyan-2048.github.io/discordo/#token=" + encodeURIComponent(token), "_blank"), {
+      capture: true,
+      once: true
+    });
 })();
 </pre
 		>
-		<p>open discord in your browser, login, open devtools/console, paste this code and hit enter! Make sure to enable popups on the discord website...</p>
+		<ul>
+			<li>open discord in your browser</li>
+			<li>login</li>
+			<li>open devtools/console</li>
+			<li>paste the code provided above and hit enter!</li>
+			<li>Make sure to enable popups on the discord website...</li>
+		</ul>
 		<div id="qrcode"></div>
 	</body>
 	<style>
 		body > *:not(pre) {
 			user-select: none;
+		}
+		ul {
+			padding-left: 15px;
 		}
 		body {
 			padding: 20px;
