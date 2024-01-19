@@ -13,18 +13,10 @@
 		<p>this will make getting your discord token easier!</p>
 		<small>(code taken from powercord/replugged js snippets)</small>
 		<pre>
-(async () => {
-  const token = await new Promise(res => webpackChunkdiscord_app.push([
-    [Math.random()], {}, (r) => {
-      res(Object.values(r.c).find(m => m.exports && m.exports.default && m.exports.default.getToken !== void 0).exports.default.getToken())
-    }
-  ]));
-  confirm("This will now redirect you to the discordo website, please click on the website at least once...") && window.addEventListener("click", () =>
-    window.open("https://cyan-2048.github.io/discordo/#token=" + encodeURIComponent(token), "_blank"), {
-      capture: true,
-      once: true
-    });
-})();
+var wreq;
+webpackChunkdiscord_app.push([[Symbol("Vencord")], {}, r => wreq = r]);
+webpackChunkdiscord_app.pop();
+window.confirm("Token acquired! This will now redirect you to the discordo website.") && window.open("https://cyan-2048.github.io/discordo/#token=" + encodeURIComponent(Object.values(wreq.c).find(a=>a.exports?.getToken).exports.getToken()), "_blank")
 </pre
 		>
 		<ul>
