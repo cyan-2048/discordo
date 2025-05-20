@@ -13,14 +13,12 @@
 		<p>this will make getting your discord token easier!</p>
 		<small>(code inspired by Vencord)</small>
 		<pre>
-var wreq;
-webpackChunkdiscord_app.push([[Symbol("Vencord")], {}, r => wreq = r]);
-webpackChunkdiscord_app.pop();
-window.confirm("Token acquired! This will now redirect you to the discordo website.") && window.open("https://cyan-2048.github.io/discordo/#token=" + encodeURIComponent(Object.values(wreq.c).find(a=>a.exports?.getToken).exports.getToken()), "_blank")
+window.confirm("Token acquired! This will now redirect you to the discordo website.") && window.open("https://cyan-2048.github.io/discordo/#token=" + encodeURIComponent(Vencord.Webpack.findByProps('getToken').getToken()), "_blank")
 </pre
 		>
 		<ul>
 			<li>open discord in your browser</li>
+			<li>Install <a href="https://vencord.dev/download/">Vencord</a></li>
 			<li>login</li>
 			<li>open devtools/console</li>
 			<li>paste the code provided above and hit enter!</li>
