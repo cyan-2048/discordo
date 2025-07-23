@@ -11,15 +11,24 @@
 	<body>
 		<h2>Welcome to Discordo!</h2>
 		<p>this will make getting your discord token easier!</p>
-		<small>(code inspired by Vencord)</small>
-		<pre>
-window.confirm("Token acquired! This will now redirect you to the discordo website.") && window.open("https://cyan-2048.github.io/discordo/#token=" + encodeURIComponent(Vencord.Webpack.findByProps('getToken').getToken()), "_blank")
+		<small>(code inspired by the <a href="https://gist.github.com/aamiaa/204cd9d42013ded9faf646fae7f89fbb">quests exploit</a>)</small>
+		<pre>(() => {
+  const wpRequire = webpackChunkdiscord_app.push([[Symbol()], {}, (r) => r]);
+  webpackChunkdiscord_app.pop();
+
+  const token = Object.values(wpRequire.c)
+    .find((x) => x?.exports?.getToken)
+    .exports.getToken();
+
+  if (window.confirm("Token acquired! This will now redirect you to the discordo website.")) {
+    window.open("https://cyan-2048.github.io/discordo/#token=" + encodeURIComponent(token), "_blank");
+  }
+})();
 </pre
 		>
 		<ul>
 			<li>WARNING: this tool will store your discord token in your browser history, you should delete the browser history entry for this website or use incognito mode.</li>
 			<li>open discord in your browser</li>
-			<li>Install <a href="https://vencord.dev/download/">Vencord</a></li>
 			<li>login</li>
 			<li>open devtools/console</li>
 			<li>paste the code provided above and hit enter!</li>
