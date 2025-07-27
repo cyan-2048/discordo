@@ -35,6 +35,7 @@
 			<li>Make sure to enable popups on the discord website...</li>
 		</ul>
 		<div id="qrcode"></div>
+		<div id="root"></div>
 	</body>
 	<style>
 		body > *:not(pre) {
@@ -45,6 +46,15 @@
 		}
 		body {
 			padding: 20px;
+		}
+
+		#qrcode {
+			height: 180px;
+			width: 180px;
+		}
+
+		#qrcode img {
+			image-rendering: pixelated;
 		}
 	</style>
 </html>
